@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Flexbox Page</title>
+    <style>
+        @media(min-width:768px) {
+
+            .container-1 {
+                display: flex;
+                /* align-items: flex-start | flex-end | center; */
+                /* flex-direction: column | row; */
+            }
+
+            .container-2 {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        .container-1 div,
+        .container-2 div,
+        .container-3 div {
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .container-3 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .container-box {
+            flex-basis: 25%;
+        }
+
+        .box-1 {
+            flex: 2;
+            order: 2;
+        }
+
+        .box-2 {
+            flex: 1;
+            order: 3;
+        }
+
+        .box-3 {
+            flex: 1;
+            order: 1;
+        }
+
+        .container3-box {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-1">
+        <div class="box-1">
+            <h1>Heading 1</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+        <div class="box-2">
+            <h1>Heading 2</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+        <div class="box-3">
+            <h1>Heading 3</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+    </div>
+
+    <div class="container-2">
+        <div class="container-box">
+            <h1>Heading 4</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+        <div class="container-box">
+            <h1>Heading 5</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+        <div class="container-box">
+            <h1>Heading 6</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+    </div>
+
+    <div class="container-3">
+        <div class="container3-box">
+            <h1>Heading 4</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+        <div class="container3-box">
+            <h1>Heading 5</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+        <div class="container3-box">
+            <h1>Heading 6</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+        <div class="container3-box">
+            <h1>Heading 4</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+        <div class="container3-box">
+            <h1>Heading 4</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+        <div class="container3-box">
+            <h1>Heading 4</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus, illum, deleniti nostrum optio
+            cupiditate voluptate distinctio laudantium cumque est qui.
+        </div>
+    </div>
+</body>
+
+</html>
