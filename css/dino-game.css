@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#game {
+  width: 500px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+#character {
+  width: 20px;
+  height: 50px;
+  background-color: green;
+  position: relative;
+  top: 150px;
+  word-wrap: break-word;
+  padding: 2px 2px 0 2px;
+  margin-left: 20px;
+  color: white;
+}
+
+.animate-jump {
+  animation: jump 0.5s linear;
+}
+
+#block {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  position: relative;
+  top: 130px;
+  left: 480px;
+  animation: block 1.5s infinite linear;
+}
+
+#lost-message {
+  color: red;
+  font-size: larger;
+  font-weight: 700;
+}
+
+.animate-hari-gayo {
+  animation: lost-animation 1s;
+}
+
+@keyframes lost-animation {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 150px;
+  }
+  40% {
+    top: 100px;
+  }
+  60% {
+    top: 100px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+
+@keyframes block {
+  0% {
+    left: 480px;
+  }
+  100% {
+    left: -40px;
+  }
+}
