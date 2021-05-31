@@ -1,4 +1,4 @@
-// simple function program
+// Program 1: simple function program
 /************************************************
 var number = 15;
 
@@ -11,7 +11,7 @@ var answer = square(number);
 console.log("%c" + answer, "font-weight:bold; font-size:2rem; color:green;");
 ***********************************************/
 
-// program for understanding the variable scope
+// Program 2: for understanding the variable scope
 /***********************************************
 var x = "global";
 
@@ -32,20 +32,20 @@ function funB() {
 ************************************************/
 
 
-// program 3: example of temporal dead zone
+// Program 3: example of temporal dead zone
 /***********************************************
 
 // hoisting of variable b (accessing value of b before being initialized)
 console.log(b);
-// the time between variable is hosted and variable being initialized in program is
+// the time between variable is hoisted and variable being initialized in program is
 //    when the variable declared using 'let' or 'const' is put into temporal dead zone.
 // anything above initialization of such variables is temporal dead zone for those variables.
 let b = 100;
 ************************************************/
 
 // Program 4: example of closures
-// Closure is function which bundles along with the lexical environment.
-// It can access outer function's scope from inner closure function.
+// Closure is function which bundles along with its lexical environment.
+// We can access outer function's scope from inner closure function.
 /* ********************************************
 // Example 1:
 function x() {
@@ -93,3 +93,114 @@ x();
 
 ***********************************************/
 
+// Program 5: Example of setTimeout() function
+// setTimeout() stores the code in different memory location along with 
+//  its lexical refrences to veriables and functions and will execute them
+//  the code when specified timer gets expired.
+/* ********************************************
+function x() {
+  for (var i = 0; i < 5; i++) {
+    function closure(i) {
+      setTimeout(function () {
+        console.log(i);
+      }, i * 1000);
+    }
+
+    closure(i);
+  }
+
+  console.log("Hello World!");
+}
+
+x();
+
+
+// Another Example
+
+function x() {
+
+  function inner1() {
+    console.log("Inner one:" + i);
+  }
+
+  function inner2() {
+    console.log("Inner two");
+  }
+
+  var i = 10;
+  return inner1;
+}
+
+x()();  // using double parantheses we can call the returned closure
+
+************************************************/
+
+
+// Examples: some function related terms
+/***********************************************
+
+// Function Statement a.k.a Function Declaration
+
+function temp() {
+  console.log("Nothing");
+}
+
+// Function Expression - Assigning function to a variable
+//  Difference between func statement and expression is that
+//  function statement can be before defining, but in function expression,
+//  function is assigned to a variable only at the time of assignment.
+//  So, if we call below function using b() above the declaration of
+//  function expression, It will throw error of TypeError: b is not function.
+
+var b = function () {
+  console.log("Nothing again");
+}
+
+// Anonymous functions - Functions without name
+//  specifically used when function needs to be used value or values.
+//  We can use such functions in function expressions, but not in
+//  function statements
+
+
+// Named function expression - instead of using anonymous function
+//  in the function expression, if use function with a name.
+
+// Difference between parameters and arguments?
+// Parameters are variables passed in function definition
+// Arguments are variables passed during function calling.
+
+function func(param1, param2,) // These are Parameters
+{
+  // ....
+}
+
+func(arg1, arg2); // These are arguments
+
+
+// First Class functions a.k.a functions as first class citizens -
+//  an ability to use functions as values.
+//  in JavaScript, we can use function as arguments and we can also
+//  return a function from another function.
+
+// Passing function as parameter
+
+function a(funcParam) {
+  console.log(funcParam);
+}
+
+a(function () {
+  console.log("This is a function passed as argument");
+});
+
+// Returning a function
+
+var b = function () {
+  return function returnFunc() {
+    console.log("Function to be returned");
+  }
+}
+
+var returnFuncVal = b();
+returnFuncVal();
+
+***********************************************/
