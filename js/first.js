@@ -97,6 +97,23 @@ x();
 // setTimeout() stores the code in different memory location along with 
 //  its lexical refrences to veriables and functions and will execute them
 //  the code when specified timer gets expired.
+
+// How setTimeout() is executed:
+  // When the timer specified in setTimeout() expires, The callback function statement
+  // written inside the setTimeout() function is put into the "Callback Queue".
+  // This queue stores the function statement. 
+  // The "event loop" tries to search if global execution context has completed 
+  // its execution, if it is done, then checks if there is any function available in 
+  // callback queue, if there is a function found in a queue, it will push this 
+  // function to call stack in javascript engine to execute it.
+
+
+// Note: What are MicroTasks in JavaScript?
+  // the callback functions which come through promises and mutation observer
+  // are Microtasks. Such tasks are stores in MicroTasks Queue, and this queue
+  // has higher priority than callback queue to be pushed by event loop in 
+  // call stack for executing.
+
 /* ********************************************
 function x() {
   for (var i = 0; i < 5; i++) {
@@ -202,5 +219,16 @@ var b = function () {
 
 var returnFuncVal = b();
 returnFuncVal();
+
+***********************************************/
+
+
+// Program 6: Event listener
+//  Example: Adding event listener to a button click.
+
+/***********************************************
+document.getElementById("test-button").addEventListener("click", function () {
+  console.log("Yay! button is clicked");
+});
 
 ***********************************************/

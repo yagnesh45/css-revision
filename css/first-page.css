@@ -1,0 +1,32 @@
+.card {
+  padding: 1em;
+  /* background: #d8d6d6; */
+  max-width: 300px;
+  border-radius: 0.5em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid #cfcfcf;
+}
+
+.name {
+  font-size: 0.9em;
+  color: brown;
+  font-weight: bold;
+}
+
+.message-time-block {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.time {
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+.message {
+  font-size: 1.3em;
+}
