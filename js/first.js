@@ -165,7 +165,7 @@ function temp() {
 
 // Function Expression - Assigning function to a variable
 //  Difference between func statement and expression is that
-//  function statement can be before defining, but in function expression,
+//  function statement can be called before defining, but in function expression,
 //  function is assigned to a variable only at the time of assignment.
 //  So, if we call below function using b() above the declaration of
 //  function expression, It will throw error of TypeError: b is not function.
