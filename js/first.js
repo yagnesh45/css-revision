@@ -109,8 +109,9 @@ x();
 
 
 // Note: What are MicroTasks in JavaScript?
-  // the callback functions which come through promises and mutation observer
-  // are Microtasks. Such tasks are stores in MicroTasks Queue, and this queue
+  // the callback functions which come through promises and mutation observer 
+  // (Observes the changes in DOM tree) are Microtasks.
+  // Such tasks are stores in MicroTasks Queue, and this queue
   // has higher priority than callback queue to be pushed by event loop in 
   // call stack for executing.
 
