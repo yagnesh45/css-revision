@@ -233,3 +233,122 @@ document.getElementById("test-button").addEventListener("click", function () {
 });
 
 ***********************************************/
+
+// Program 7: Higher Order Functions - map, filter, reduce
+
+
+// map() - maps the function on each member of array to manipulate the element
+// and return the array with manipulated elements.
+
+const arr = [6,2,1,9,7,26,4];
+
+/***********************************************
+
+const double = arr.map((x) => {
+  return x*2;
+});
+
+const binary = arr.map((num) => {
+  return num.toString(2);
+})
+
+console.log(double);
+console.log(binary);
+
+***********************************************/
+
+// filter() - Filters the elements of array which fulfills the condition written within
+// filter().
+
+/***********************************************
+
+const output = arr.filter((num) => num % 2==0);
+
+console.log(output);
+***********************************************/
+
+// reduce() - iterates over elements in array and gives one output after
+// performing operations on all elements.
+
+/*
+* reduce syntax:
+* const output = array.reduce((accumulator, current) => { ... } [, accValue]);
+* @param - accumulator - is a number which stores the cumulatively calculated value of
+               previous elements of array.
+* @param - current - is a number which points to current iterating value in array.
+* @param - accValue - [Optional] initial value for accumulator. default is first element.
+* @returns - output - a number which has final single value output after operation on
+            all the array elements is performed.
+*/
+
+/***********************************************
+// Example for calculating sum of elements using reduce()
+const output = arr.reduce((sum, num) => {
+  sum = sum + num;
+  return sum;
+});
+
+console.log(output);
+
+// another example of reduce to get max number from array
+const max = arr.reduce((max, num) => {
+  return num > max ? num : max;
+});
+
+console.log(max);
+***********************************************/
+
+
+// Complicated Example of map(), filter(), and reduce():
+
+const users = [
+  {firstName:"Yagnesh", lastName:"Patil",age:21,paisa:"LoL"},
+  {firstName:"Dhruv", lastName:"Patil",age:12,paisa:"Lmao"},
+  {firstName:"Shivom", lastName:"Shukla",age:20,paisa:"bau badha"},
+  {firstName:"Mitesh", lastName:"Chaudhary",age:65,paisa:"nathi"},
+  {firstName:"Binu", lastName:"KS",age:65,paisa:"chhe"},
+];
+
+// map(): get all the first name and last name to merge and display them 
+
+/* const fullNames = users.map((user) => {
+  return `${user["firstName"]} ${user["lastName"]}`;
+}); */
+
+// OR
+// const fullNames = users.map((user) => user["firstName"] + user["lastName"]);
+
+// console.log(fullNames);
+
+// reduce(): Get the age wise count of records
+
+/* const sameAge = users.reduce((acc, curr)=>{
+  // Logic 1 : O(n^2)
+  // acc[curr.age] = users.filter((ele) => ele.age === curr.age).length;
+  // return acc;
+
+  // Logic 2 : O(n)
+  if (acc[curr.age]){
+    acc[curr.age] = ++acc[curr.age];
+  }
+  else{
+    acc[curr.age] = 1;
+  }
+  return acc;
+}, {});
+
+console.log(sameAge); */
+
+// filter(): Filter the first name of all objects where age < 30
+
+/* let firstNameAgeLT30 = users.filter((user) => user.age < 30).map((userLT30) => userLT30.firstName);
+
+// We can also do this using reduce
+firstNameAgeLT30 = users.reduce((acc,curr)=>{
+  if(curr.age < 30){
+    acc.push(curr["firstName"]);
+  }
+  return acc;
+}, []);
+
+console.log(firstNameAgeLT30); */
