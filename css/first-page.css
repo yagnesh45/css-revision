@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .card {
   padding: 1em;
   /* background: #d8d6d6; */
@@ -29,4 +35,24 @@
 
 .message {
   font-size: 1.3em;
+}
+
+.before-after-test::before {
+  content: "";
+  display: block;
+  width: 5rem;
+  background-color: red;
+  height: 0.5rem;
+  border-radius: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.before-after-test::after {
+  content: "";
+  display: block;
+  width: 1rem;
+  background-color: red;
+  height: 1rem;
+  border-radius: 50%;
+  margin-top: 0.5rem;
 }
